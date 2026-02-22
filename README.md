@@ -4,12 +4,25 @@
 To predict whether a person has a disease based on medical data.
 
 ## Team Members
-- Adarsh – Project Lead
-- Member 2 – Data Collection
-- Member 3 – Model Training
-- Member 4 – Testing
+- Adarsh – Model Evaluation
+- Member 2 – 
+- Member 3 – 
+- Member 4 – 
+- Member 5 -
+- Member 6 - 
 
 ## Tools Used
 - Python
 - Pandas
-- Scikit-learn
+- numpy
+- matplotlib / seaborn
+
+  ## Model Used
+  - Logistic Regression
+  - Naive Bayes
+  - SVM
+  - KNN
+  - Decision Tree
+  - Random Forest
+  - XGBoost
+  - Neural Network
