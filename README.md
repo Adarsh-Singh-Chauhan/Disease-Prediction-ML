@@ -4,12 +4,12 @@
 To predict whether a person has a disease based on medical data.
 
 ## Team Members
-- Adarsh – Model Evaluation
-- Member 2 – 
-- Member 3 – 
-- Member 4 – 
-- Member 5 -
-- Member 6 - 
+- Ansh – ML Lead
+- Sanjeet – EDA Analysis
+- Anushka - Database and Connectivity
+- Prakash - Provide Assistent
+- OM Tiwari - Backend
+- Adarsh - Model Evolution
 
 ## Tools Used
 - Python
