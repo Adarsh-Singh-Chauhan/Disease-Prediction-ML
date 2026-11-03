@@ -77,6 +77,11 @@ def home() -> FileResponse:
     return FileResponse(PUBLIC_DIR / "index.html")
 
 
+@app.get("/favicon.svg", include_in_schema=False)
+def favicon() -> FileResponse:
+    return FileResponse(PUBLIC_DIR / "favicon.svg", media_type="image/svg+xml")
+
+
 @app.get("/styles.css", include_in_schema=False)
 def styles() -> FileResponse:
     return FileResponse(PUBLIC_DIR / "styles.css", media_type="text/css")
@@ -89,10 +94,21 @@ def javascript() -> FileResponse:
 
 @app.get("/api/health")
 def health() -> dict:
+    row_count = 0
+    available = False
+    if DATA_PATH.exists():
+        try:
+            frame = pd.read_csv(DATA_PATH)
+            available = all(column in frame.columns for column in FEATURES + ["target"])
+            row_count = int(len(frame)) if available else 0
+        except Exception:
+            available = False
+
     return {
-        "status": "ok",
+        "status": "ok" if available else "degraded",
         "service": "HeartGuard ML API",
-        "dataset_available": DATA_PATH.exists(),
+        "dataset_available": available,
+        "training_rows": row_count,
         "features": len(FEATURES),
         "model": "RandomForestClassifier",
     }
