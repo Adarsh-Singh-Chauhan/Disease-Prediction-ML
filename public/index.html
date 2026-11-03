@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#071a1d" />
+  <meta name="description" content="HeartGuard — an educational heart-disease classification demo powered by a Random Forest model." />
+  <title>HeartGuard — ML Health Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="HeartGuard home">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34S5 25 5 14.5C5 6.8 14.5 4 20 12c5.5-8 15-5.2 15 2.5C35 25 20 34 20 34Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M8 20h7l3-6 5 13 3-7h6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong>heartguard</strong><small>ML HEALTH LAB</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-item active" href="#predict"><span>⌁</span> Prediction lab <i></i></a>
+      <a class="nav-item" href="#method"><span>◫</span> Model & method</a>
+      <a class="nav-item" href="#about"><span>◎</span> About project</a>
+      <div class="side-spacer"></div>
+      <div class="sidebar-note">
+        <span class="pulse-dot"></span><span>MODEL SERVICE</span>
+        <strong id="service-status">Checking connection…</strong>
+        <small>Random Forest · API</small>
+      </div>
+      <div class="profile-mini">
+        <div class="avatar">ML</div><div><strong>Machine learning</strong><small>Research workspace</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb">Workspace <span>/</span> <strong>Prediction lab</strong></div>
+        <div class="top-actions"><span class="live-pill"><i></i> LIVE DEMO</span><a class="github-link" href="https://github.com/Adarsh-Singh-Chauhan/Disease-Prediction-ML" target="_blank" rel="noreferrer">View source ↗</a></div>
+      </header>
+
+      <section class="hero" id="about">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> MACHINE LEARNING · HEALTH RESEARCH</div>
+          <h1>See the patterns.<br><em>Understand the model.</em></h1>
+          <p>An interactive look at a heart-disease classification model trained on a structured clinical dataset. Explore the inputs, run a prediction, and understand what the model returns.</p>
+          <div class="hero-meta"><span><b class="tiny-check">✓</b> 13 input features</span><span><b class="tiny-check">✓</b> 303 dataset rows</span><span><b class="tiny-check">✓</b> Random Forest</span></div>
+        </div>
+        <div class="heart-art" aria-hidden="true">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+          <div class="heart-core"><svg viewBox="0 0 120 120"><path d="M60 102S15 75 15 41C15 16 44 10 60 36 76 10 105 16 105 41c0 34-45 61-45 61Z" fill="url(#heartFill)" stroke="#91f0cf" stroke-width="1.6"/><path d="M19 59h23l9-18 15 39 11-24h23" fill="none" stroke="#e6fff7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="heartFill" x1="20" y1="15" x2="100" y2="105"><stop stop-color="#2bc7a2" stop-opacity=".95"/><stop offset="1" stop-color="#0c665a" stop-opacity=".25"/></linearGradient></defs></svg></div>
+          <div class="art-chip chip-top"><span class="pulse-dot"></span> SIGNAL ANALYSIS</div>
+          <div class="art-chip chip-bottom"><strong>13</strong><span>FEATURE INPUTS</span></div>
+        </div>
+      </section>
+
+      <section class="stat-grid">
+        <article class="stat-card"><div class="stat-icon">⌘</div><div class="stat-label">DATASET SIZE</div><strong>303 <small>rows</small></strong><div class="stat-foot">Source: heart.csv</div></article>
+        <article class="stat-card"><div class="stat-icon">◈</div><div class="stat-label">INPUT FEATURES</div><strong>13 <small>variables</small></strong><div class="stat-foot">Structured tabular data</div></article>
+        <article class="stat-card"><div class="stat-icon">◎</div><div class="stat-label">RECORDED ACCURACY</div><strong>83.61<small>%</small></strong><div class="stat-foot">Notebook test-split result*</div></article>
+        <article class="stat-card"><div class="stat-icon">⌁</div><div class="stat-label">CLASSIFIER</div><strong class="model-name">Random Forest</strong><div class="stat-foot">200 estimators · depth 6</div></article>
+      </section>
+      <p class="metric-caveat">*Historical result recorded in the repository notebook; not a clinical performance guarantee.</p>
+
+      <section class="workspace-grid" id="predict">
+        <div class="panel input-panel">
+          <div class="panel-heading">
+            <div><div class="eyebrow">01 / MODEL INPUT</div><h2>Build a data profile</h2><p>Enter the 13 dataset attributes to run the classifier.</p></div>
+            <span class="step-badge">01</span>
+          </div>
+          <form id="prediction-form">
+            <div class="form-section-title"><span>01</span> PERSONAL PROFILE</div>
+            <div class="field-grid">
+              <label class="field"><span>Age <small>years</small></span><input name="age" type="number" min="18" max="100" value="52" required /></label>
+              <label class="field"><span>Sex <small>dataset code</small></span><select name="sex"><option value="1">Code 1</option><option value="0">Code 0</option></select></label>
+            </div>
+            <div class="form-section-title"><span>02</span> CLINICAL ATTRIBUTES</div>
+            <div class="field-grid">
+              <label class="field"><span>Chest pain <small>cp · code</small></span><select name="cp"><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></label>
+              <label class="field"><span>Resting BP <small>mm Hg</small></span><input name="trestbps" type="number" min="70" max="250" value="130" required /></label>
+              <label class="field"><span>Cholesterol <small>mg/dL</small></span><input name="chol" type="number" min="100" max="700" value="204" required /></label>
+              <label class="field"><span>Fasting blood sugar <small>fbs · code</small></span><select name="fbs"><option value="0">0</option><option value="1">1</option></select></label>
+              <label class="field"><span>Resting ECG <small>restecg · code</small></span><select name="restecg"><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option></select></label>
+              <label class="field"><span>Max heart rate <small>thalach · bpm</small></span><input name="thalach" type="number" min="50" max="250" value="160" required /></label>
+              <label class="field"><span>Exercise angina <small>exang · code</small></span><select name="exang"><option value="0">0</option><option value="1">1</option></select></label>
+              <label class="field"><span>Oldpeak <small>ST depression</small></span><input name="oldpeak" type="number" min="0" max="10" step="0.1" value="1.0" required /></label>
+              <label class="field"><span>Slope <small>code</small></span><select name="slope"><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option></select></label>
+              <label class="field"><span>Major vessels <small>ca · code</small></span><select name="ca"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>
+              <label class="field"><span>Thal <small>dataset code</small></span><select name="thal"><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></label>
+            </div>
+            <div class="form-note"><span>ⓘ</span> Categorical fields use the numeric codes in the source CSV. They are intentionally not translated into clinical descriptions.</div>
+            <button class="submit-button" type="submit"><span class="button-icon">⌁</span><span id="submit-text">Run model prediction</span><span class="button-arrow">↗</span></button>
+          </form>
+        </div>
+
+        <aside class="panel result-panel">
+          <div class="panel-heading"><div><div class="eyebrow">02 / MODEL OUTPUT</div><h2>Prediction snapshot</h2><p>Results appear here after a successful run.</p></div><span class="step-badge">02</span></div>
+          <div id="empty-state" class="empty-state">
+            <div class="empty-graphic"><div class="empty-ring"></div><span>⌁</span></div>
+            <strong>Awaiting input</strong><p>Complete the data profile and run the model to see its predicted dataset class.</p>
+            <div class="empty-line"><i></i><i></i><i></i></div>
+          </div>
+          <div id="result-state" class="result-state hidden" aria-live="polite">
+            <div class="result-topline"><span class="result-tag">CLASSIFICATION COMPLETE</span><span class="result-time" id="result-time">JUST NOW</span></div>
+            <div class="result-orb" id="result-orb"><div class="result-orb-inner"><strong id="score-value">--</strong><span>MODEL SCORE</span></div></div>
+            <div class="prediction-label" id="prediction-label">Predicted class</div>
+            <p class="prediction-copy" id="prediction-copy">Model output</p>
+            <div class="result-divider"></div>
+            <div class="result-row"><span>Predicted target</span><strong id="target-value">—</strong></div>
+            <div class="result-row"><span>Positive-class score</span><strong id="positive-value">—</strong></div>
+            <div class="result-row"><span>Training records</span><strong id="records-value">—</strong></div>
+            <div class="result-disclaimer"><b>Important context</b><span id="notice-value">This is an experimental classification output, not a diagnosis or calibrated clinical risk estimate.</span></div>
+            <button class="reset-button" id="reset-button" type="button">Run another profile ↗</button>
+          </div>
+          <div class="panel-footer"><span class="pulse-dot"></span> Results generated by the project API</div>
+        </aside>
+      </section>
+
+      <section class="method-section" id="method">
+        <div class="section-heading"><div><div class="eyebrow">03 / UNDER THE HOOD</div><h2>How the model works</h2></div><p>A transparent view of the experiment, from the dataset to the predicted label.</p></div>
+        <div class="steps-grid">
+          <article class="method-card"><span class="method-number">01</span><div class="method-icon">▤</div><h3>Structured data</h3><p>303 rows and 13 predictor fields are loaded from the repository CSV.</p></article>
+          <article class="method-card"><span class="method-number">02</span><div class="method-icon">⌕</div><h3>Model training</h3><p>A Random Forest classifier is fitted using the notebook's recorded settings.</p></article>
+          <article class="method-card"><span class="method-number">03</span><div class="method-icon">⌁</div><h3>Class prediction</h3><p>The API returns the predicted target class and model probability scores.</p></article>
+          <article class="method-card"><span class="method-number">04</span><div class="method-icon">◫</div><h3>Metric review</h3><p>Notebook evaluation includes accuracy, precision, recall and confusion matrix.</p></article>
+        </div>
+      </section>
+
+      <footer class="footer"><a class="brand brand-footer" href="#"><span class="brand-mark">♥</span><span><strong>heartguard</strong><small>ML HEALTH LAB</small></span></a><span>Built for learning · Powered by Python & scikit-learn</span><a href="https://github.com/Adarsh-Singh-Chauhan/Disease-Prediction-ML" target="_blank" rel="noreferrer">Source repository ↗</a></footer>
+      <div class="global-disclaimer">HeartGuard is an educational research demonstration. It does not provide medical advice, diagnosis, or treatment recommendations. Never delay professional care based on this tool.</div>
+    </main>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
