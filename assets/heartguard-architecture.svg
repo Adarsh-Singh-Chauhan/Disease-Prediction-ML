@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title desc">
+  <title id="title">HeartGuard application architecture</title>
+  <desc id="desc">Browser interface sends validated feature inputs to a FastAPI endpoint, which loads a cached Random Forest trained on heart.csv and returns class and probability scores.</desc>
+  <defs>
+    <linearGradient id="archBg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081a1b"/><stop offset="1" stop-color="#102a32"/></linearGradient>
+    <linearGradient id="archMint" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4bd6b2"/><stop offset="1" stop-color="#a2f2ce"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#79ddbd"/></marker>
+  </defs>
+  <rect width="1200" height="570" rx="24" fill="url(#archBg)" stroke="#31534e" stroke-width="1.4"/>
+  <text x="46" y="56" fill="#9cf0d1" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">HEARTGUARD / REQUEST LIFECYCLE</text>
+  <text x="46" y="88" fill="#f1fff8" font-family="Arial,sans-serif" font-size="27" font-weight="800">From feature input to model output</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="52" y="150" width="265" height="250" rx="18" fill="#102a2b" stroke="#4a8875" stroke-width="1.4"/>
+    <rect x="72" y="171" width="116" height="25" rx="12" fill="#7ce4bd" fill-opacity=".13"/>
+    <text x="130" y="188" text-anchor="middle" fill="#a7f2d6" font-size="10" font-weight="700">CLIENT</text>
+    <text x="78" y="235" fill="#effff8" font-size="21" font-weight="800">Browser UI</text>
+    <text x="78" y="267" fill="#a7c5bb" font-size="14">HTML · CSS · JavaScript</text>
+    <text x="78" y="308" fill="#cfe7dc" font-size="13">• 13 dataset fields</text>
+    <text x="78" y="335" fill="#cfe7dc" font-size="13">• Form validation</text>
+    <text x="78" y="362" fill="#cfe7dc" font-size="13">• Result visualization</text>
+
+    <rect x="470" y="150" width="265" height="250" rx="18" fill="#102a2b" stroke="#4a8875" stroke-width="1.4"/>
+    <rect x="490" y="171" width="118" height="25" rx="12" fill="#7ce4bd" fill-opacity=".13"/>
+    <text x="549" y="188" text-anchor="middle" fill="#a7f2d6" font-size="10" font-weight="700">API LAYER</text>
+    <text x="496" y="235" fill="#effff8" font-size="21" font-weight="800">FastAPI</text>
+    <text x="496" y="267" fill="#a7c5bb" font-size="14">Python · Pydantic</text>
+    <text x="496" y="308" fill="#cfe7dc" font-size="13">• Validate request schema</text>
+    <text x="496" y="335" fill="#cfe7dc" font-size="13">• Health & model routes</text>
+    <text x="496" y="362" fill="#cfe7dc" font-size="13">• Prediction endpoint</text>
+
+    <rect x="888" y="150" width="260" height="250" rx="18" fill="#102a2b" stroke="#4a8875" stroke-width="1.4"/>
+    <rect x="908" y="171" width="143" height="25" rx="12" fill="#7ce4bd" fill-opacity=".13"/>
+    <text x="979" y="188" text-anchor="middle" fill="#a7f2d6" font-size="10" font-weight="700">INFERENCE</text>
+    <text x="914" y="235" fill="#effff8" font-size="21" font-weight="800">Random Forest</text>
+    <text x="914" y="267" fill="#a7c5bb" font-size="14">scikit-learn</text>
+    <text x="914" y="308" fill="#cfe7dc" font-size="13">• 200 estimators</text>
+    <text x="914" y="335" fill="#cfe7dc" font-size="13">• Max depth = 6</text>
+    <text x="914" y="362" fill="#cfe7dc" font-size="13">• Cached per worker</text>
+
+    <path d="M317 275H454" fill="none" stroke="#79ddbd" stroke-width="2.4" marker-end="url(#arrow)"/>
+    <path d="M735 275H872" fill="none" stroke="#79ddbd" stroke-width="2.4" marker-end="url(#arrow)"/>
+    <circle r="5" fill="#a7f2d6"><animateMotion dur="2.8s" repeatCount="indefinite" path="M317 275H454"/></circle>
+    <circle r="5" fill="#a7f2d6"><animateMotion dur="2.8s" begin="1.1s" repeatCount="indefinite" path="M735 275H872"/></circle>
+
+    <rect x="470" y="444" width="678" height="76" rx="14" fill="#0b2024" stroke="#3f7869"/>
+    <text x="493" y="472" fill="#a7f2d6" font-size="11" font-weight="700" letter-spacing="1">DATA SOURCE</text>
+    <text x="493" y="498" fill="#effff8" font-size="16" font-weight="700">heart.csv · 303 rows · 13 predictors + binary target</text>
+    <path d="M1018 400V428H810V444" fill="none" stroke="#79ddbd" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <rect x="52" y="444" width="365" height="76" rx="14" fill="#0b2024" stroke="#3f7869"/>
+    <text x="76" y="472" fill="#a7f2d6" font-size="11" font-weight="700" letter-spacing="1">DEPLOYMENT</text>
+    <text x="76" y="498" fill="#effff8" font-size="16" font-weight="700">Vercel · Python serverless function</text>
+    <path d="M184 400V428H235V444" fill="none" stroke="#79ddbd" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="600" y="548" text-anchor="middle" fill="#7eaa9a" font-size="10">Prediction response: target class · model score · positive-class score · training row count · safety notice</text>
+  </g>
+</svg>
