@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">HeartGuard — Machine Learning Health Lab</title>
+  <desc id="desc">Animated heart pulse graphic for an educational heart-disease classification project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071b1a"/><stop offset=".55" stop-color="#0b2b29"/><stop offset="1" stop-color="#102a35"/></linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5eead4"/><stop offset=".55" stop-color="#7ce4bd"/><stop offset="1" stop-color="#b0f5d4"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#40d6b0" stop-opacity=".26"/><stop offset="1" stop-color="#40d6b0" stop-opacity="0"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1200" height="330" rx="26" fill="url(#bg)"/>
+  <circle cx="1000" cy="155" r="230" fill="url(#glow)"/>
+  <circle cx="1000" cy="155" r="145" fill="none" stroke="#9af0d2" stroke-opacity=".11" stroke-width="1"/>
+  <circle cx="1000" cy="155" r="112" fill="none" stroke="#9af0d2" stroke-opacity=".12" stroke-width="1" stroke-dasharray="3 10"/>
+  <path d="M0 270H1200" stroke="#9af0d2" stroke-opacity=".1"/>
+  <g opacity=".12" stroke="#a8e9d1"><path d="M0 55H1200M0 110H1200M0 165H1200M0 220H1200"/><path d="M80 0V330M160 0V330M240 0V330M320 0V330M400 0V330M480 0V330M560 0V330M640 0V330M720 0V330M800 0V330M880 0V330M960 0V330M1040 0V330M1120 0V330"/></g>
+  <g transform="translate(64 48)">
+    <rect x="0" y="0" width="188" height="28" rx="14" fill="#7ce4bd" fill-opacity=".12" stroke="#7ce4bd" stroke-opacity=".45"/>
+    <circle cx="16" cy="14" r="4" fill="#7ce4bd"><animate attributeName="opacity" values="1;.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
+    <text x="30" y="18" fill="#a9f2d8" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.8">MACHINE LEARNING LAB</text>
+    <text x="0" y="112" fill="#f1fff8" font-family="Arial,sans-serif" font-size="66" font-weight="800" letter-spacing="-2">HEARTGUARD</text>
+    <text x="3" y="151" fill="#a9f2d8" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2">HEART-DISEASE CLASSIFICATION</text>
+    <text x="3" y="188" fill="#a8c6bd" font-family="Arial,sans-serif" font-size="15">Explore structured data. Compare models. Understand predictions.</text>
+    <g transform="translate(0 222)">
+      <rect width="106" height="31" rx="8" fill="#7ce4bd" fill-opacity=".13" stroke="#7ce4bd" stroke-opacity=".45"/>
+      <text x="53" y="20" text-anchor="middle" fill="#c8ffe8" font-family="Arial,sans-serif" font-size="11" font-weight="700">303 ROWS</text>
+      <rect x="118" width="122" height="31" rx="8" fill="#7ce4bd" fill-opacity=".08" stroke="#7ce4bd" stroke-opacity=".3"/>
+      <text x="179" y="20" text-anchor="middle" fill="#c8ffe8" font-family="Arial,sans-serif" font-size="11" font-weight="700">13 FEATURES</text>
+      <rect x="252" width="140" height="31" rx="8" fill="#7ce4bd" fill-opacity=".08" stroke="#7ce4bd" stroke-opacity=".3"/>
+      <text x="322" y="20" text-anchor="middle" fill="#c8ffe8" font-family="Arial,sans-serif" font-size="11" font-weight="700">RANDOM FOREST</text>
+    </g>
+  </g>
+  <g transform="translate(810 55)">
+    <circle cx="190" cy="110" r="82" fill="#0d3933" fill-opacity=".72" stroke="#75e6c1" stroke-opacity=".3" stroke-width="1.5"/>
+    <circle cx="190" cy="110" r="68" fill="none" stroke="#75e6c1" stroke-opacity=".25" stroke-dasharray="4 8">
+      <animateTransform attributeName="transform" type="rotate" from="0 190 110" to="360 190 110" dur="24s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M190 166S111 123 111 76C111 39 153 28 190 69 227 28 269 39 269 76 269 123 190 166 190 166Z" fill="#39bd9d" fill-opacity=".22" stroke="#8df0ce" stroke-width="2"/>
+    <path d="M120 100H157L170 78L188 128L207 91L219 108H260" fill="none" stroke="url(#mint)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="250">
+      <animate attributeName="stroke-dashoffset" from="250" to="0" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="190" cy="110" r="100" fill="none" stroke="#83e9c7" stroke-opacity=".3">
+      <animate attributeName="r" values="92;112;92" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".35;0;.35" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <g transform="translate(285 8)">
+      <rect width="95" height="34" rx="9" fill="#112f32" stroke="#7ce4bd" stroke-opacity=".45"/>
+      <text x="47.5" y="22" text-anchor="middle" fill="#b8f5dd" font-family="Arial,sans-serif" font-size="10" font-weight="700">MODEL API</text>
+    </g>
+    <g transform="translate(6 216)">
+      <rect width="142" height="35" rx="9" fill="#112f32" stroke="#7ce4bd" stroke-opacity=".35"/>
+      <text x="71" y="22" text-anchor="middle" fill="#b8f5dd" font-family="Arial,sans-serif" font-size="10" font-weight="700">EXPLAINABLE OUTPUTS</text>
+    </g>
+  </g>
+</svg>
